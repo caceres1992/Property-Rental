@@ -18,7 +18,7 @@ const ContactModal = () => {
         <div className=" p-4 md:p-10    flex-1 max-w-xl   bg-white  w-screen ">
           <Title title="Keep in touch" highlight="with us" />
           <p className=" text-dark/80 mt-2.5">
-            If you have any inquired let's it knows
+            {`  If you have any inquired let's it knows`}
           </p>
           <ContactForm />
         </div>

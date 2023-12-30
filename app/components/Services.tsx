@@ -18,6 +18,7 @@ const Services = ({ serviceData }: Props) => {
           {serviceData.map((item, idx) => {
             return (
               <CardService
+              key={idx}
               title={item.title}
               description={item.description}
              srcPicture={item.image}
