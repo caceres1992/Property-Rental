@@ -1,0 +1,98 @@
+{
+  "hero": {
+    "title": "Luxury Living Awaits You",
+    "description": "Discover Comfort and Convenience in Our Rental House",
+    "image": "/assets/hero-house.png"
+  },
+  "about": {
+    "description": "Explore contemporary urban living in this two-bedroom residence boasting panoramic city views in North Caroline. The well-lit living space, modern kitchen, and private balcony offer a comfortable retreat. \n\nTake advantage of exclusive rooftop amenities, including a pool and fitness center, all within walking distance of local conveniences. This property seamlessly combines practicality with style for a relaxed urban lifestyle.",
+    "image": "/assets/person-about.png"
+  },
+  "services": [
+    {
+      "id": 1,
+      "title": "Comfortable Living",
+      "description": "Experience a comfortable and well-appointed residence designed for modern living.",
+      "image": "/assets/house/image1.jpeg"
+    },
+    {
+      "id": 2,
+      "title": "Secure and Private",
+      "description": "Relax in a secure and private environment that feels like home.",
+      "image": "/assets/house/image6.jpeg"
+    }
+  ],
+  "property": {
+    "id": "abcd3421223",
+    "address": "12312 Millerbrook Dr",
+    "priceNight": 320,
+    "city": "Duluth",
+    "state": "GA",
+    "zipCode": "30096",
+    "qtyBeds": "3",
+    "qtyBath": "4",
+    "sqftProperty": "3424",
+    "pictures": [
+      {
+        "id": "1",
+        "imageUrl": "/assets/house/image1.jpeg",
+        "altText": "This is image 1"
+      },
+      {
+        "id": "2",
+        "imageUrl": "/assets/house/image2.jpeg",
+        "altText": "This is image 2"
+      },
+      {
+        "id": "3",
+        "imageUrl": "/assets/house/image3.jpeg",
+        "altText": "This is image 3"
+      },
+      {
+        "id": "4",
+        "imageUrl": "/assets/house/image4.jpeg",
+        "altText": "This is image 4"
+      },
+      {
+        "id": "5",
+        "imageUrl": "/assets/house/image5.jpeg",
+        "altText": "This is image 5"
+      },
+      {
+        "id": "6",
+        "imageUrl": "/assets/house/image6.jpeg",
+        "altText": "This is image 6"
+      },
+      {
+        "id": "7",
+        "imageUrl": "/assets/house/image7.jpeg",
+        "altText": "This is image 7"
+      },
+      {
+        "id": "8",
+        "imageUrl": "/assets/house/image8.jpeg",
+        "altText": "This is image 8"
+      },
+      {
+        "id": "9",
+        "imageUrl": "/assets/house/image9.jpeg",
+        "altText": "This is image 9"
+      },
+      {
+        "id": "10",
+        "imageUrl": "/assets/house/image10.jpeg",
+        "altText": "This is image 10"
+      },
+      {
+        "id": "11",
+        "imageUrl": "/assets/house/image11.jpeg",
+        "altText": "This is image 11"
+      },
+      {
+        "id": "12",
+        "imageUrl": "/assets/house/image12.jpeg",
+        "altText": "This is image 12"
+      }
+    ]
+  }
+}
