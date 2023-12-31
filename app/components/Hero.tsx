@@ -16,7 +16,7 @@ const Hero = ({ heroData }: Props) => {
           backgroundImage: " url('/assets/house/image8.jpeg')",
         }}
       >
-        <div className="  relative  w-full max-w-xl  flex flex-col justify-center items-center md:items-start md:justify-start gap-5 py-40">
+        <div className="  relative  w-full max-w-xl  flex flex-col justify-center items-center text-center md:text-left md:items-start md:justify-start gap-5 py-40">
           <div className=" text-white">
             <h1 className=" text-4xl md:text-7xl font-extrabold">
               <span className=" text-primary">
