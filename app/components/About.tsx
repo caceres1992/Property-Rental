@@ -3,8 +3,8 @@ import React from "react";
 import Title from "./ui/Title";
 import Image from "next/image";
 import Button from "./ui/Button";
-import { BiSolidMapPin } from "react-icons/bi";
 import useStore from "../lib/zustandConfig";
+import { TbMessageCircle } from "react-icons/tb";
 
 type Props = {
   aboutData: IAbout;
@@ -40,7 +40,7 @@ const About = ({ aboutData }: Props) => {
                 label="Contact us"
                 variant="outline"
                 onClick={() => openModalContact(true)}
-                icon={<BiSolidMapPin />}
+                icon={<TbMessageCircle />}
               />
             </div>
           </div>
