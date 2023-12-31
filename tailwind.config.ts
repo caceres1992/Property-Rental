@@ -23,7 +23,7 @@ const config: Config = {
     },
     container:{
       center:true,
-      padding:'.5em'
+      padding:'2em'
     }
   },
   plugins: [],

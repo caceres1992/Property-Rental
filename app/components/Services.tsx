@@ -10,7 +10,7 @@ const Services = ({ serviceData }: Props) => {
   return (
     <section
       id="services"
-      className="py-10 md:py-0 md:min-h-screen flex justify-center flex-col snap-center "
+      className="py-10 md:py-20 flex justify-center flex-col  "
     >
       <div className=" container">
         <Title title="Our principal" highlight="Services" />

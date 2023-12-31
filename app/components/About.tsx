@@ -16,7 +16,7 @@ const About = ({ aboutData }: Props) => {
   return (
     <section
       id="about"
-      className=" flex justify-center flex-col py-10 md:py-0 md:min-h-screen snap-center"
+      className=" flex justify-center flex-col py-10 md:py-20"
     >
       <div className=" container">
         <Title title="About the" highlight="House" />

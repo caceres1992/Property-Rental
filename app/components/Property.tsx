@@ -29,7 +29,7 @@ const GridPictures = ({ pictures }: { pictures: IPictures[] }) => {
               placeholder="blur"
             />
             {idx + 1 === pictures.slice(0, 5).length && (
-              <div className=" bg-dark absolute bottom-5 right-5 px-3 py-1 rounded-md flex items-center gap-x-2">
+              <div className=" bg-dark absolute  text-white cursor-pointer bottom-5 right-5 px-3 py-1 rounded-md flex items-center gap-x-2">
                 <IoCamera size={20} /> + {+pictures.length - idx}
               </div>
             )}
@@ -56,7 +56,7 @@ const Property = ({ propertyData }: Props) => {
   return (
     <section
       id="property"
-      className=" py-10 md:py-0 md:min-h-screen flex justify-center items-center snap-center"
+      className=" py-10 md:py-20 flex justify-center items-center"
     >
       <div className="container">
         <Title title="Property in" highlight="North Caroline" />

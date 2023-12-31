@@ -10,7 +10,7 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <section className="relative snap-end border">
+    <section className="relative">
       <div
         className="  absolute inset-0 bg-no-repeat lg:bg-left  bg-bottom"
         style={{ backgroundImage: "url('/assets/circles.svg')" }}

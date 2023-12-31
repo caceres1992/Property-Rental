@@ -8,12 +8,14 @@ import { Toaster } from "react-hot-toast";
 import ContactModal from "./components/ContactModal";
 import ModalMap from "./components/ModalMap";
 import { fetchingHomePage } from "./lib/fetchingData";
+import Navbar from "./components/Navbar";
 export default async function Home() {
   const homeData: IHomePage = await (await fetchingHomePage()).json();
   const { hero, about, services, property } = homeData;
 
   return (
     <ScrollMandatoryComp>
+      <Navbar/>
       <Hero heroData={hero} />
       <About aboutData={about} />
       <Services serviceData={services} />
