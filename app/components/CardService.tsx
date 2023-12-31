@@ -10,10 +10,10 @@ type Props = {
 
 const CardService = ({ title, description, srcPicture, alt }: Props) => {
   return (
-    <div className="first:bg-dark border border-dark text-dark first:text-white p-10 rounded-md space-y-5 flex flex-col">
+    <div className=" even:bg-dark border border-dark text-dark even:text-white p-5 rounded-md space-y-5 flex flex-col">
       <h3 className=" font-bold">{title}</h3>
       <p className=" opacity-80 flex-1">{description}</p>
-      <div className=" hidden md:block h-32 lg:h-52 xl:h-64 w-full relative">
+      <div className=" hidden lg:block h-32 lg:h-40 xl:h-44 w-full relative">
         <Image
           fill
           src={srcPicture}

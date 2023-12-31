@@ -59,7 +59,7 @@ const Property = ({ propertyData }: Props) => {
       className=" py-10 md:py-20 flex justify-center items-center"
     >
       <div className="container">
-        <Title title="Property in" highlight="North Caroline" />
+        <Title title="Property in" highlight="North Carolina" />
 
         <div className="pt-10">
           <div className=" hidden md:block">
@@ -73,7 +73,7 @@ const Property = ({ propertyData }: Props) => {
               src={propertyData.pictures[0].imageUrl}
               objectFit="cover"
             />
-            <div className=" bg-dark absolute bottom-5 left-5 px-3 py-1 rounded-md flex items-center gap-x-2">
+            <div className=" bg-dark text-white absolute bottom-5 left-5 px-3 py-1 rounded-md flex items-center gap-x-2">
               <IoCamera /> 1 / {propertyData.pictures.length}
             </div>
           </div>

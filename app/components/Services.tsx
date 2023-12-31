@@ -14,7 +14,7 @@ const Services = ({ serviceData }: Props) => {
     >
       <div className=" container">
         <Title title="Our principal" highlight="Services" />
-        <div className=" grid grid-cols-1 lg:grid-cols-2 gap-10 pt-10">
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pt-10">
           {serviceData.map((item, idx) => {
             return (
               <CardService

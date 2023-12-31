@@ -5,21 +5,28 @@
     "image": "/assets/hero-house.png"
   },
   "about": {
-    "description": "Explore contemporary urban living in this two-bedroom residence boasting panoramic city views in North Caroline. The well-lit living space, modern kitchen, and private balcony offer a comfortable retreat. \n\nTake advantage of exclusive rooftop amenities, including a pool and fitness center, all within walking distance of local conveniences. This property seamlessly combines practicality with style for a relaxed urban lifestyle.",
-    "image": "/assets/person-about.png"
+    "description": "Hello from the Roswels! We are proud to introduce you to our little slice of paradise, meticulously crafted for your ideal escape from the everyday hustle. Nestled in [Location], our property is more than just a house; it's a haven we've designed for you to experience the perfect vacation.  As a family, we understand the importance of feeling at home while away. That's why we've poured our hearts into creating a space where you can unwind, make lasting memories, and enjoy the comforts of home in a beautiful setting. From cozy corners to thoughtful amenities, every detail reflects our commitment to providing you with a delightful stay.",
+    "image": "/assets/family.png"
   },
   "services": [
     {
       "id": 1,
+      "title": "Secure and Private",
+      "description": "Relax in a secure and private environment that feels like home.",
+      "image": "/assets/house/image6.jpeg"
+    },
+    {
+      "id": 2,
       "title": "Comfortable Living",
       "description": "Experience a comfortable and well-appointed residence designed for modern living.",
       "image": "/assets/house/image1.jpeg"
     },
+
     {
-      "id": 2,
-      "title": "Secure and Private",
-      "description": "Relax in a secure and private environment that feels like home.",
-      "image": "/assets/house/image6.jpeg"
+      "id": 3,
+      "title": "Smart Home Integration",
+      "description": "Offering smart home features for enhanced security and convenience.",
+      "image": "/assets/house/image7.jpeg"
     }
   ],
   "property": {
