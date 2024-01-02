@@ -9,6 +9,7 @@ import { MdOutlineSquareFoot } from "react-icons/md";
 import Button from "./ui/Button";
 import useStore from "../lib/zustandConfig";
 import { MdBuildCircle } from "react-icons/md";
+import { usePathname, useRouter } from "next/navigation";
 
 const GridPictures = ({ pictures }: { pictures: IPictures[] }) => {
   return (
@@ -44,10 +45,12 @@ type Props = {
   propertyData: IProperty;
 };
 
-const Property = ({ propertyData }: Props) => {
+const PropertyComp = ({ propertyData }: Props) => {
   const handleButtonContactProperty = useStore((state) => state.setActiveModal);
-
+  const pathName = usePathname().includes("property");
+  const route = useRouter()
   const handleBookingNowButton = () => {
+    route.push('/property/123')
     toast.error("we are under construction. Thank you to be patient", {
       icon: <MdBuildCircle className={" text-secondary"} size={40} />,
     });
@@ -102,18 +105,22 @@ const Property = ({ propertyData }: Props) => {
             </div>
 
             <div className=" space-y-5 w-fit">
-              <Button
-                onClick={() => handleBookingNowButton()}
-                label="Booking Now!"
-                size="block"
-                variant="primary"
-              />
-              <Button
-                label="Contact Property"
-                variant="outline"
-                onClick={() => handleButtonContactProperty(true)}
-                icon={<TbMessageCircle />}
-              />
+              {!pathName && (
+                <>
+                  <Button
+                    onClick={() => handleBookingNowButton()}
+                    label="Booking Now!"
+                    size="block"
+                    variant="primary"
+                  />
+                  <Button
+                    label="Contact Property"
+                    variant="outline"
+                    onClick={() => handleButtonContactProperty(true)}
+                    icon={<TbMessageCircle />}
+                  />
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -122,4 +129,4 @@ const Property = ({ propertyData }: Props) => {
   );
 };
 
-export default Property;
+export default PropertyComp;

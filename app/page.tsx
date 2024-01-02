@@ -4,7 +4,6 @@ import About from "./components/About";
 import Services from "./components/Services";
 import Property from "./components/Property";
 import Footer from "./components/Footer";
-import { Toaster } from "react-hot-toast";
 import ContactModal from "./components/ContactModal";
 import ModalMap from "./components/ModalMap";
 import { fetchingHomePage } from "./lib/fetchingData";
@@ -14,8 +13,8 @@ export default async function Home() {
   const { hero, about, services, property } = homeData;
 
   return (
-    <ScrollMandatoryComp>
-      <Navbar/>
+    <>
+      <Navbar />
       <Hero heroData={hero} />
       <About aboutData={about} />
       <Services serviceData={services} />
@@ -23,7 +22,6 @@ export default async function Home() {
       <Footer />
       <ContactModal />
       <ModalMap />
-      <Toaster />
-    </ScrollMandatoryComp>
+    </>
   );
 }

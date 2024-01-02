@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss'
-
+import colors from 'tailwindcss/colors'
 const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -19,7 +19,8 @@ const config: Config = {
       secondary:'#3353C4',
       dark:'#111523',
       light:'#C9EDFF',
-      white:'#fff'
+      white:'#fff',
+      gray:colors.gray
     },
     container:{
       center:true,

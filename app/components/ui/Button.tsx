@@ -19,9 +19,9 @@ const Button = ({ type, icon, size, variant, label, onClick }: Props) => {
         size === "block" ? "w-full" : "w-fit ",
         variant === "primary" && " bg-primary text-white",
         variant === "secondary" && "  bg-secondary  text-dark",
-        variant === "outline" && " bg-white text-dark border-dark",
-        variant === "ghost" ? '"p-3' : ' py-3 px-10 md:px-16 md:py-4 ',
-        " space-x-2 rounded-md hover:opacity-90 h-fit transition-all justify-center font-bold flex items-center gap-2"
+        variant === "outline" && " bg-white text-dark border-dark hover:bg-gray-100 transition-all",
+        variant === "ghost" ? '" py-2.5 px-5 hover:bg-gray-100 ' : ' py-3 px-10 md:px-16 md:py-4 ',
+        " space-x-2  rounded-md hover:opacity-90 h-fit transition-all justify-center font-bold flex items-center gap-2"
       )}
     >
       {icon} {label}
