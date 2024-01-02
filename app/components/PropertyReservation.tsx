@@ -6,6 +6,7 @@ import { IoCalendarClear } from "react-icons/io5";
 import Button from "./ui/Button";
 import toast from "react-hot-toast";
 import CalendarBooking from "./CalendarBooking";
+import useStore from "../lib/zustandConfig";
 
 const reserved = [
   {
@@ -17,10 +18,8 @@ const reserved = [
 type Props = {};
 
 const PropertyReservation = (props: Props) => {
-  const [selectedDates, setSelectedDates] = useState([]);
-  const handleChange = (e: any) => {
-    setSelectedDates(e);
-  };
+  const selectedDates = useStore((state) => state.selectedDates);
+  const days = moment([0]).diff(selectedDates[1]);
 
   return (
     <div className=" pb-20">
@@ -30,7 +29,9 @@ const PropertyReservation = (props: Props) => {
             <p className=" text-dark font-bold text-lg">
               {selectedDates.length === 0 && "Select your Check-In"}
               {selectedDates.length === 1 && "Select your Check-Out "}
-              {selectedDates.length === 2 && "5 nights in 12312 Millerbrook Dr"}
+              {selectedDates.length === 2 &&
+                moment(selectedDates[1]).diff(selectedDates[0], "days") +
+                  " nights in 12312 Millerbrook Dr"}
             </p>
             <p className=" text-dark">
               {selectedDates.length === 2
@@ -41,11 +42,7 @@ const PropertyReservation = (props: Props) => {
             </p>
           </div>
 
-          <CalendarBooking
-            handleChange={handleChange}
-            selectedDates={selectedDates}
-            reserved={reserved}
-          />
+          <CalendarBooking reserved={reserved} />
         </div>
       </div>
     </div>

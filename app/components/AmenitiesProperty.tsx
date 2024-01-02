@@ -17,10 +17,10 @@ const AmenitiesProperty = (props: Props) => {
     <div>
       <div className=" container">
       <div className="  flex-col  lg:items-center lg:flex-row flex gap-y-7 py-5 border-b border-gray-200">
-          <div className="xs:w-96 font-bold  text-lg">
+          <div className="  sm:w-96 font-bold  text-lg">
             <p>Amenities</p>
           </div>
-          <div className=" grid grid-cols-2 md:grid-col-3 w-full gap-10">
+          <div className=" grid grid-cols-2 md:grid-cols-3 w-full gap-10">
             <div className="  flex items-center gap-2">
               <CiWifiOn size={24} />
               <p>Wifi / Cable</p>

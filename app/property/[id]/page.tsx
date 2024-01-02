@@ -26,7 +26,7 @@ const Property = async (props: Props) => {
         <PropertyReservation />
       </div>
 
-      <div className=" hidden xl:block w-96">
+      <div className=" hidden xl:block w-96 mr-10">
         <BookingForm/>
       </div>
     </div>
