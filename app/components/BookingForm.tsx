@@ -50,7 +50,7 @@ const BookingForm = (props: Props) => {
           nights
         </p>
       )}
-      <form onSubmit={submitForm} className=" relative space-y-5  ">
+      <form onSubmit={submitForm} className=" relative space-y-5  text-dark ">
         <div
           onClick={() => setOpenCalendar(true)}
           className="flex  flex-row  justify-between border p-3.5 rounded-md  cursor-pointer relative"
