@@ -14,7 +14,7 @@ type Props = {};
 
 const AmenitiesProperty = (props: Props) => {
   return (
-    <div>
+    <div className=" text-dark">
       <div className=" container">
       <div className="  flex-col  lg:items-center lg:flex-row flex gap-y-7 py-5 border-b border-gray-200">
           <div className="  sm:w-96 font-bold  text-lg">

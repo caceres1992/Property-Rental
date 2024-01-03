@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 import Button from "./ui/Button";
 import { IoCalendarClear } from "react-icons/io5";
 import useStore from "../lib/zustandConfig";
-import moment from "moment";
 
 type Props = {
   handleChange?: (e: any) => void;
@@ -24,7 +23,7 @@ const CalendarBooking = ({ reserved }: Props) => {
   };
 
   const checkMonth = useCallback(() => {
-    console.log(monthCaptured)
+    console.log(monthCaptured);
     return monthCaptured;
   }, [monthCaptured]);
   const checkYear = useCallback(() => {
@@ -38,11 +37,11 @@ const CalendarBooking = ({ reserved }: Props) => {
         onChange={handleChange}
         onOverbook={(e, err) => toast.error("This date is booked already.")}
         reserved={reserved}
-        month={checkMonth() as any}
+        month={checkMonth()}
         year={checkYear()}
         variant={"booking"}
         onMonthChange={(month, year) => {
-            setMonthCaptured(month,year)
+          setMonthCaptured(month, year);
         }}
         dateOfStartMonth={2}
         isStart={true}
