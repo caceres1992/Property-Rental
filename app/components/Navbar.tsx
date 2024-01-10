@@ -1,12 +1,16 @@
+'use client'
 import Link from "next/link";
 import React from "react";
 import Button from "./ui/Button";
 import { TbMessageCircle } from "react-icons/tb";
 import { BiMenu } from "react-icons/bi";
+import useStore from "../lib/zustandConfig";
 
 type Props = {};
 
 const Navbar = (props: Props) => {
+  const handleButtonContactProperty = useStore((state) => state.setActiveModal);
+
   return (
     <header className="  w-full  z-50  bg-white ">
       <nav className=" container text-dark  py-5 flex  justify-between items-center ">
@@ -25,7 +29,7 @@ const Navbar = (props: Props) => {
           <Button
             label="Let's talk"
             variant={'ghost'}
-            // onClick={() => handleButtonContactProperty(true)}
+            onClick={() => handleButtonContactProperty(true)}
             icon={<TbMessageCircle />}
           />
         </div>

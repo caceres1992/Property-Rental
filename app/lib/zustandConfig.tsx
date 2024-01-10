@@ -1,32 +1,51 @@
 import { create } from "zustand";
 
-type Store = {
-  activeModalContact: Boolean;
-  monthCaptured: any;
-  yearCaptured: any;
+type StoreMethod = {
   setOnchangeMonth: (
     month: number | undefined,
     year: number | undefined
   ) => void;
-  selectedDates: any[];
-  showDateSelected: any[];
   resetDateSelected: () => void;
   setSelectedDates: (e: any) => void;
-  activeModalMap: Boolean;
   setActiveModal: (active: Boolean) => void;
   setActiveModalMap: (active: Boolean) => void;
+  onChangeAdult: (adultQty: number) => void;
+  onChangeChild: (adultQty: number) => void;
+  handleDrawerModal: (value: boolean) => void;
 };
 
-const useStore = create<Store>()((set) => ({
+type Store = {
+  activeModalContact: Boolean;
+  monthCaptured: any;
+  yearCaptured: any;
+  selectedDates: any[];
+  showDateSelected: any[];
+  activeModalMap: Boolean;
+  children: number;
+  adults: number;
+  drawerModalIsActive: boolean;
+};
+
+const useStore = create<Store & StoreMethod>()((set) => ({
   activeModalContact: false,
   activeModalMap: false,
   monthCaptured: 0,
+  selectedDates: [],
+  showDateSelected: [],
+  adults: 1,
+  children: 0,
   yearCaptured: undefined,
+  drawerModalIsActive: false,
+  onChangeAdult: (adultQty: number) => {
+    set(() => ({ adults: adultQty }));
+  },
+  onChangeChild: (childrenQty: number) => {
+    set(() => ({ children: childrenQty }));
+  },
   setOnchangeMonth: (month: number | undefined, year: number | undefined) => {
     set(() => ({ monthCaptured: month, yearCaptured: year }));
   },
-  selectedDates: [],
-  showDateSelected: [],
+
   resetDateSelected: () => {
     set(() => ({ showDateSelected: [] }));
   },
@@ -37,6 +56,8 @@ const useStore = create<Store>()((set) => ({
     set(() => ({ activeModalContact: active })),
   setActiveModalMap: (active: Boolean) =>
     set(() => ({ activeModalMap: active })),
+  handleDrawerModal: (value: boolean) => 
+  set(()=>({drawerModalIsActive:value})),
 }));
 
 export default useStore;

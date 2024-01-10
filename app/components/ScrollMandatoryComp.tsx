@@ -6,7 +6,7 @@ type Props = {
 
 const ScrollMandatoryComp = ({ children }: Props) => {
   return (
-    <main className="  md:snap-y scroll-smooth bg-white h-screen overflow-auto transition-all duration-1000">
+    <main className="  md:snap-y  scroll-smooth bg-white h-screen overflow-auto transition-all duration-1000">
       {children}
     </main>
   );
