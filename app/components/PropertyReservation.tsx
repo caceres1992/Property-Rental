@@ -1,10 +1,7 @@
 "use client";
-import React, { useState } from "react";
-import Calendar from "@demark-pro/react-booking-calendar";
+import React from "react";
 import moment from "moment";
-import { IoCalendarClear } from "react-icons/io5";
-import Button from "./ui/Button";
-import toast from "react-hot-toast";
+
 import CalendarBooking from "./CalendarBooking";
 import useStore from "../lib/zustandConfig";
 
@@ -42,7 +39,7 @@ const PropertyReservation = (props: Props) => {
             </p>
           </div>
 
-          <CalendarBooking reserved={reserved} />
+          <CalendarBooking  />
         </div>
       </div>
     </div>
