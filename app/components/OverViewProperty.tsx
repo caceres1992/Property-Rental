@@ -12,37 +12,36 @@ const OverViewProperty = (props: Props) => {
   return (
     <div className=" text-dark">
       <div className=" container">
-      <div className="  flex-col  lg:items-center lg:flex-row flex gap-y-7 py-5 border-b border-gray-200">
+        <div className="  flex-col  lg:items-center lg:flex-row flex gap-y-7 py-5 border-b border-gray-200">
           <div className="sm:w-96 font-bold  text-lg">
             <p>Rooms & beds</p>
           </div>
           <div className=" grid grid-cols-2 md:grid-cols-3  w-full gap-5">
-            <div className=" w-full h-20  border border-gray-200 rounded-md  flex justify-center flex-col items-center gap-1.5 py-2">
+            <div className=" w-full  text-center  border border-gray-200 rounded-md  flex justify-center flex-col items-center gap-1.5 py-2">
               <MdOutlineKingBed size={24} />
               <p>1 King Bed</p>
             </div>
-            <div className=" w-full h-20  border border-gray-200 rounded-md  flex justify-center flex-col items-center gap-1.5 py-2">
+            <div className=" w-full  text-center border border-gray-200 rounded-md  flex justify-center flex-col items-center gap-1.5 py-2">
               <MdSingleBed size={24} />
               <p>1 Queen Bed</p>
             </div>
-            <div className=" w-full h-20  border border-gray-200 rounded-md  flex justify-center flex-col items-center gap-1.5 py-2">
+            <div className=" w-full  text-center  border border-gray-200 rounded-md  flex justify-center flex-col items-center gap-1.5 py-2">
               <MdSingleBed size={24} />
-              <p>2 single Beds</p>
+              <p className="">2 single Beds</p>
             </div>
           </div>
         </div>
 
         <div className="  flex-col  lg:items-center lg:flex-row flex gap-y-7 py-5 border-b border-gray-200">
-
           <div className="sm:w-96  font-bold  text-lg">
             <p>bathrooms</p>
           </div>
-          <div className=" grid grid-cols-2 md:grid-cols-3 w-full gap-10">
-            <div className=" w-full h-20  border border-gray-200 rounded-md  flex justify-center flex-col items-center gap-1.5 py-2">
+          <div className=" grid grid-cols-2 md:grid-cols-3  w-full gap-5">
+            <div className=" w-full  text-center  border border-gray-200 rounded-md  flex justify-center flex-col items-center gap-1.5 py-2">
               <TbBath size={24} />
               <p>2 Full bathrooms</p>
             </div>
-            <div className=" w-full h-20  border border-gray-200 rounded-md  flex justify-center flex-col items-center gap-1.5 py-2">
+            <div className=" w-full  text-center  border border-gray-200 rounded-md  flex justify-center flex-col items-center gap-1.5 py-2">
               <PiShower size={24} />
               <p>1 Single bathroom</p>
             </div>
@@ -50,7 +49,6 @@ const OverViewProperty = (props: Props) => {
         </div>
 
         <div className="  flex-col  lg:items-center lg:flex-row flex gap-y-7 py-5 border-b border-gray-200">
-
           <div className="sm:w-96 font-bold  text-lg">
             <p>About this property</p>
           </div>
@@ -97,7 +95,7 @@ Evolve makes it easy to find and book properties you’ll never want to leave. Y
 - NOTE: This property is located on the 2nd floor and requires stairs 2 full flights of stairs to access and may be difficult for guests with limited mobility
 `}
             </p>
-            <Button label="See more"  variant={'ghost'} icon={<IoIosExpand />} />
+            <Button label="See more" variant={"ghost"} icon={<IoIosExpand />} />
           </div>
         </div>
       </div>

@@ -39,6 +39,9 @@ const DrawerForm = () => {
   });
 
   const handleDrawerModal = useStore((state) => state.handleDrawerModal);
+  const handleSaveBookingData = useStore(
+    (state) => state.handleSaveBookingData
+  );
   const [openDrawer, setOpenDrawer] = useState<boolean>();
   const [openCalendar, setOpenCalendar] = useState(false);
   const [openGuestInputs, setOpenGuestInputs] = useState(false);
@@ -71,6 +74,8 @@ const DrawerForm = () => {
     data.guest = String(adults + children);
 
     const openPaymentPage = async () => {
+      console.log(data)
+      handleSaveBookingData(data);
       const resp = await axios.post("/api/checkout_session", data);
       if (resp.data.url) navigate.push(resp.data.url);
     };
@@ -165,10 +170,10 @@ const DrawerForm = () => {
 
                 <div className=" grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div className=" text-dark relative">
-                    <p>Guests ( 1 )</p>
+                    <p>Guests ( {adults + children} )</p>
                     <div className=" flex gap-x-4">
-                      <p>2 Adults</p>
-                      <p>1 Children</p>
+                      <p>{adults} Adults</p>
+                      <p>{children} Children</p>
                       <button
                         type="button"
                         onClick={() => setOpenGuestInputs(true)}
@@ -178,7 +183,7 @@ const DrawerForm = () => {
                       </button>
                     </div>
                     {openGuestInputs && (
-                      <div className=" absolute w-fit bg-white shadow-md rounded-md py-5   top-full">
+                      <div className=" absolute w-fit bg-white shadow-md rounded-md py-5  z-20  top-full">
                         <button
                           className=" m-2  p-1 rounded-md hover:bg-gray-100"
                           onClick={() => {
@@ -209,7 +214,7 @@ const DrawerForm = () => {
                       </button>
                     </div>
                     {openCalendar && (
-                      <div className=" absolute    border   -left-1/2 bottom-10 z-20 bg-white  rounded-md">
+                      <div className=" absolute    border     mx-3  md:mx-0 md:-left-1/2 bottom-10 z-20 bg-white  rounded-md">
                         <button
                           className=" m-2  p-1 rounded-md hover:bg-gray-100"
                           type="button"

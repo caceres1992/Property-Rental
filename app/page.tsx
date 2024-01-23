@@ -14,7 +14,6 @@ export default async function Home() {
 
   return (
     <>
-      <Navbar />
       <Hero heroData={hero} />
       <About aboutData={about} />
       <Services serviceData={services} />

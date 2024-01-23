@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import ScrollMandatoryComp from "./components/ScrollMandatoryComp";
 import { Toaster } from "react-hot-toast";
+import Navbar from "./components/Navbar";
 
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -19,8 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ScrollMandatoryComp>{children}</ScrollMandatoryComp>
-      <Toaster />
+        <ScrollMandatoryComp>
+          <Navbar />
+
+          {children}
+        </ScrollMandatoryComp>
+        <Toaster />
       </body>
     </html>
   );

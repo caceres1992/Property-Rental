@@ -38,7 +38,7 @@ const InputCountry = ({ name, label, register }: Props) => {
           {countries?.map((country, idx) => {
             return (
               <option
-                defaultValue={"United States"}
+                selected={"United States" === country.name.common}
                 value={country.name?.common}
                 key={idx}
               >

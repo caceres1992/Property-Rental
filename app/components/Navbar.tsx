@@ -13,16 +13,16 @@ const Navbar = (props: Props) => {
 
   return (
     <header className="  w-full  z-50  bg-white ">
-      <nav className=" container text-dark  py-5 flex  justify-between items-center ">
+      <nav className="  px-5  text-dark  py-5 flex  justify-between items-center ">
         <div className=" flex items-center gap-5 lg:gap-x-10">
           <p className=" text-4xl font-black text-dark">SolNSol</p>
           <button className=" lg:hidden">
             <BiMenu size={24} />
           </button>
           <div className=" hidden lg:flex flex-row  gap-6">
-            <Link href={"/"}>About</Link>
-            <Link href={"/2"}>Services</Link>
-            <Link href={"/3"}>Property</Link>
+            <Link href={"/#about"}>About</Link>
+            <Link href={"/#services"}>Services</Link>
+            <Link href={"/#property"}>Property</Link>
           </div>
         </div>
         <div>

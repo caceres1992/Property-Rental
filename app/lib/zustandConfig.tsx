@@ -12,6 +12,7 @@ type StoreMethod = {
   onChangeAdult: (adultQty: number) => void;
   onChangeChild: (adultQty: number) => void;
   handleDrawerModal: (value: boolean) => void;
+  handleSaveBookingData: (data: any) => void;
 };
 
 type Store = {
@@ -24,6 +25,7 @@ type Store = {
   children: number;
   adults: number;
   drawerModalIsActive: boolean;
+  booking: any;
 };
 
 const useStore = create<Store & StoreMethod>()((set) => ({
@@ -36,6 +38,10 @@ const useStore = create<Store & StoreMethod>()((set) => ({
   children: 0,
   yearCaptured: undefined,
   drawerModalIsActive: false,
+  booking: {},
+  handleSaveBookingData: (data: any) => {
+    set(() => ({ booking: data }));
+  },
   onChangeAdult: (adultQty: number) => {
     set(() => ({ adults: adultQty }));
   },
@@ -56,8 +62,8 @@ const useStore = create<Store & StoreMethod>()((set) => ({
     set(() => ({ activeModalContact: active })),
   setActiveModalMap: (active: Boolean) =>
     set(() => ({ activeModalMap: active })),
-  handleDrawerModal: (value: boolean) => 
-  set(()=>({drawerModalIsActive:value})),
+  handleDrawerModal: (value: boolean) =>
+    set(() => ({ drawerModalIsActive: value })),
 }));
 
 export default useStore;

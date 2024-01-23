@@ -10,6 +10,7 @@ import Button from "./ui/Button";
 import useStore from "../lib/zustandConfig";
 import { MdBuildCircle } from "react-icons/md";
 import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 
 const GridPictures = ({ pictures }: { pictures: IPictures[] }) => {
   return (
@@ -48,12 +49,9 @@ type Props = {
 const PropertyComp = ({ propertyData }: Props) => {
   const handleButtonContactProperty = useStore((state) => state.setActiveModal);
   const pathName = usePathname().includes("property");
-  const route = useRouter()
+  const route = useRouter();
   const handleBookingNowButton = () => {
-    route.push('/property/123')
-    toast.error("we are under construction. Thank you to be patient", {
-      icon: <MdBuildCircle className={" text-secondary"} size={40} />,
-    });
+    route.push("/property/123");
   };
 
   return (
@@ -107,12 +105,14 @@ const PropertyComp = ({ propertyData }: Props) => {
             <div className=" space-y-5 w-fit">
               {!pathName && (
                 <>
-                  <Button
-                    onClick={() => handleBookingNowButton()}
-                    label="Booking Now!"
-                    size="block"
-                    variant="primary"
-                  />
+                  <Link href={'/property/123'}>
+                    <Button
+                      label="Booking Now!"
+                      size="block"
+                      variant="primary"
+                    />
+                  </Link>
+
                   <Button
                     label="Contact Property"
                     variant="outline"
