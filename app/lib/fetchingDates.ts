@@ -1,4 +1,4 @@
-
+// @ts-ignore
 import icsToJson from "ics-to-json-extended";
 export const fetchICSData = async (icsUrl: string) => {
   try {
