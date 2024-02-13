@@ -22,7 +22,7 @@ const ProcesingYourBooking = (): any => {
   const cleanLocalStore = useStore((state) => state.cleanLocalStore);
   const navigation = useRouter();
   const [bookingDetail, setBookingDetail] = React.useState(
-    JSON.parse(localStorage.getItem("bookingData") || "null")
+    JSON.parse(localStorage.getItem("bookingData")) || ""
   );
 
   const handleNavigation = () => {
@@ -30,14 +30,14 @@ const ProcesingYourBooking = (): any => {
     navigation.push("/");
   };
 
-  if (!bookingDetail) return navigation.push("/");
-
   useEffect(() => {
-    console.log(bookingDetail);
+    // console.log();
     setTimeout(() => {
       setShowFinalProcess(true);
     }, 5000);
   }, [0]);
+
+  if (!localStorage.getItem("bookingData")) return navigation.push("/");
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-gray-100">
