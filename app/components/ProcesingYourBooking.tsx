@@ -21,9 +21,7 @@ const ProcesingYourBooking = (): any => {
   const [showFinalProcess, setShowFinalProcess] = React.useState(false);
   const cleanLocalStore = useStore((state) => state.cleanLocalStore);
   const navigation = useRouter();
-  const [bookingDetail, setBookingDetail] = React.useState(
-    JSON.parse(localStorage.getItem("bookingData")) || ""
-  );
+  const [bookingDetail, setBookingDetail] = React.useState<IBooking | null>();
 
   const handleNavigation = () => {
     cleanLocalStore();
@@ -31,13 +29,15 @@ const ProcesingYourBooking = (): any => {
   };
 
   useEffect(() => {
-    // console.log();
+    const bookinData = JSON.parse(localStorage.getItem("bookingData") || "");
+
+    setBookingDetail(bookinData);
     setTimeout(() => {
       setShowFinalProcess(true);
     }, 5000);
   }, [0]);
 
-  if (!localStorage.getItem("bookingData")) return navigation.push("/");
+  if (!localStorage.getItem("bookingData")){ return navigation.push("/");};
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-gray-100">
@@ -54,7 +54,7 @@ const ProcesingYourBooking = (): any => {
           <div className=" mt-3">
             <p className=" font-medium">
               {showFinalProcess
-                ? `Thank you ${bookingDetail.name},`
+                ? `Thank you ${bookingDetail?.name},`
                 : " Processing your booking"}
             </p>
             <p className=" text-sm text-gray-400">
