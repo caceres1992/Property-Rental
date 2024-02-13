@@ -4,6 +4,7 @@ import "./globals.css";
 import ScrollMandatoryComp from "./components/ScrollMandatoryComp";
 import { Toaster } from "react-hot-toast";
 import Navbar from "./components/Navbar";
+import { fetchICSData } from "./lib/fetchingDates";
 
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -17,6 +18,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html lang="en">
       <body className={inter.className}>

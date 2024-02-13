@@ -5,6 +5,7 @@ import ConfettiExplosion, { ConfettiProps } from "react-confetti-explosion";
 import { FaRegCalendarCheck } from "react-icons/fa6";
 import Link from "next/link";
 import useStore from "../lib/zustandConfig";
+import { useRouter } from "next/navigation";
 
 type Props = {};
 
@@ -16,16 +17,23 @@ const largeProps: ConfettiProps = {
   colors: ["#041E43", "#1471BF", "#5BB4DC", "#FC027B", "#66D805"],
 };
 
-const ProcesingYourBooking = (props: Props) => {
+const ProcesingYourBooking = (): any => {
   const [showFinalProcess, setShowFinalProcess] = React.useState(false);
-  const booking = useStore((state) => state.booking);
+  const cleanLocalStore = useStore((state) => state.cleanLocalStore);
+  const navigation = useRouter();
+  const [bookingDetail, setBookingDetail] = React.useState(
+    JSON.parse(localStorage.getItem("bookingData") || "null")
+  );
 
+  const handleNavigation = () => {
+    cleanLocalStore();
+    navigation.push("/");
+  };
 
-
-  const handleNavigation = () => {};
+  if (!bookingDetail) return navigation.push("/");
 
   useEffect(() => {
-    console.log(booking)
+    console.log(bookingDetail);
     setTimeout(() => {
       setShowFinalProcess(true);
     }, 5000);
@@ -46,7 +54,7 @@ const ProcesingYourBooking = (props: Props) => {
           <div className=" mt-3">
             <p className=" font-medium">
               {showFinalProcess
-                ? `Thank you ${booking.name},`
+                ? `Thank you ${bookingDetail.name},`
                 : " Processing your booking"}
             </p>
             <p className=" text-sm text-gray-400">

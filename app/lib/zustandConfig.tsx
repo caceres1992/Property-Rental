@@ -1,5 +1,11 @@
 import { create } from "zustand";
 
+const reserved = [
+  {
+    startDate: new Date(2023, 12, 31),
+    endDate: new Date(2024, 1, 9),
+  },
+];
 type StoreMethod = {
   setOnchangeMonth: (
     month: number | undefined,
@@ -13,10 +19,13 @@ type StoreMethod = {
   onChangeChild: (adultQty: number) => void;
   handleDrawerModal: (value: boolean) => void;
   handleSaveBookingData: (data: any) => void;
+  cleanLocalStore: () => void;
+  fetchingDatesBooked: (dates: IBooked[]) => void;
 };
 
 type Store = {
   activeModalContact: Boolean;
+  reserved: IBooked[];
   monthCaptured: any;
   yearCaptured: any;
   selectedDates: any[];
@@ -29,6 +38,7 @@ type Store = {
 };
 
 const useStore = create<Store & StoreMethod>()((set) => ({
+  reserved: [],
   activeModalContact: false,
   activeModalMap: false,
   monthCaptured: 0,
@@ -38,9 +48,15 @@ const useStore = create<Store & StoreMethod>()((set) => ({
   children: 0,
   yearCaptured: undefined,
   drawerModalIsActive: false,
-  booking: {},
+  booking: {} || JSON.parse(localStorage.getItem("bookingData") || "{}"),
+  cleanLocalStore: () => {
+    localStorage.removeItem("bookingData");
+  },
   handleSaveBookingData: (data: any) => {
-    set(() => ({ booking: data }));
+    set(() => {
+      localStorage.setItem("bookingData", JSON.stringify(data));
+      return { booking: data };
+    });
   },
   onChangeAdult: (adultQty: number) => {
     set(() => ({ adults: adultQty }));
@@ -64,6 +80,7 @@ const useStore = create<Store & StoreMethod>()((set) => ({
     set(() => ({ activeModalMap: active })),
   handleDrawerModal: (value: boolean) =>
     set(() => ({ drawerModalIsActive: value })),
+  fetchingDatesBooked: (dates: IBooked[]) => set(() => ({ reserved: dates })),
 }));
 
 export default useStore;
