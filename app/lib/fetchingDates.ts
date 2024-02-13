@@ -12,4 +12,4 @@ export const fetchICSData = async (icsUrl: string) => {
     return null;
   } 
 };
-        
+          
