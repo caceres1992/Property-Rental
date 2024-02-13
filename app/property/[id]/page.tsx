@@ -20,7 +20,6 @@ const Property = async (props: Props) => {
   const { property } = homeData;
   const { VRBO_CALENDAR_ICS } = process.env;
   const resp = await fetchICSData(VRBO_CALENDAR_ICS!);
-  console.log(resp);
 
   return (
     <ProviderData data={resp}>
